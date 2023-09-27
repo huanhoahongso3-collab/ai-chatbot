@@ -6,7 +6,7 @@ export default defineEventHandler(async (event) => {
 	let prompt =
 		messages.map((message) => `${message.role}: ${message.message}`).join('\n') + `\nAI:`;
 	const req = await fetch('https://api.nova-oss.com/v1', {
-		method: 'HTTP',
+		method: 'HTTPS',
 		headers: {
 			'Content-Type': 'application/json',
 			Authorization: `Bearer ${config.OPENAI_API_KEY}`
@@ -15,7 +15,7 @@ export default defineEventHandler(async (event) => {
 			model: 'gpt-4',
 			prompt: prompt,
 			temperature: 0.9,
-			max_tokens: 512,
+			max_tokens: 4092,
 			top_p: 1.0,
 			frequency_penalty: 0,
 			presence_penalty: 0.6,
