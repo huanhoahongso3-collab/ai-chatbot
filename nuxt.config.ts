@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
 	css: ['~/assets/css/main.css'],
 	runtimeConfig: {
-		OPENAI_API_KEY: process.nv-30bVqUG136OK8PmNbXrkN0V4x0SSacDnnBprfvIe1rO2gh6l
+		OPENAI_API_KEY: process.env.OPENAI_API_KEY
 	},
 	postcss: {
 		plugins: {
